@@ -33,7 +33,7 @@ def test_scrollbars_by_selenium(driver):
     assert driver.title == 'Scrollbars'
 
     # click the hidden button
-    # scroll is not required
+    # scroll is not required, also
     driver.find_element(By.CSS_SELECTOR, "#hidingButton").click()
 
 

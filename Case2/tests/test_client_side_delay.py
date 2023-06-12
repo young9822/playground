@@ -21,5 +21,21 @@ def test_client_side_delay_by_playwright(BasePage):
     page.get_by_role('button', \
         name='Button Triggering Client Side Logic').click()
     # click the text to verify if it's disappeared
-    # wonderful auto-waiting feature
+    # wonderful! passed by auto-waiting feature
     page.get_by_text('Data calculated on the client side.').click()
+
+# with selenium
+from selenium.webdriver.common.by import By
+
+@pytest.mark.selenium_only
+def test_client_side_delay_by_selenium(driver):
+    driver.find_element(By.CSS_SELECTOR, \
+        "#overview > div > div:nth-child(2) > div:nth-child(2) \
+        > h3 > a").click()
+    assert driver.title == 'Client Side Delay'
+
+    # click the button
+    driver.find_element(By.CSS_SELECTOR, "#ajaxButton").click()
+    # click the text to verify if it's disappeared
+    # failed if no waiting
+    driver.find_element(By.CSS_SELECTOR, "#content > p").click()
