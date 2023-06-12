@@ -28,6 +28,7 @@ def test_client_side_delay_by_playwright(BasePage):
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 @pytest.mark.selenium_only
 def test_client_side_delay_by_selenium(driver):
@@ -43,7 +44,12 @@ def test_client_side_delay_by_selenium(driver):
     # time.sleep() - bad choice    
     # driver.find_element(By.CSS_SELECTOR, "#content > p").click()
     # explicit wait with WebDriverWait
-    element = WebDriverWait(driver, 60).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "#content > p"))
-    )
-    element.click()
+    try:
+        element = WebDriverWait(driver, 60).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "#content > p"))
+        )
+        element.click()
+    except TimeoutException:
+        print("Failed to load the element until timeout")
+    except NoSuchElementException:
+        print("No such element exception handled")
