@@ -6,13 +6,7 @@ from playwright.sync_api import Page, expect
 
 @pytest.fixture()
 def BasePage(page: Page):
-    # """base fixture for playwright"""
-    # webkit = playwright.webkit
-    # browser = webkit.launch()
-    # # create a new incognito browser context
-    # context = browser.new_context()
-    # # create a new page inside context.
-    # page = context.new_page()
+    """base fixture for playwright"""
     page.goto(TestInfo.HOME_URL)
     expect(page).to_have_title('UI Test Automation Playground')
 
