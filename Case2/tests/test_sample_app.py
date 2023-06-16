@@ -11,9 +11,9 @@ from playwright.sync_api import Page, expect
 
 @pytest.mark.playwright_only
 def test_sample_app_by_playwright(BasePage):
-    page = BasePage
+    page :Page = BasePage
 
-    # go to test input page
+    # go to Sample App page
     selection = 'Sample App'
     page.get_by_text(selection, exact=True).click()
     expect(page).to_have_title(selection)

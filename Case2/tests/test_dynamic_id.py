@@ -11,7 +11,7 @@ from playwright.sync_api import Page, expect
 @pytest.mark.playwright_only
 def test_dynamic_id_by_playwright(BasePage):
     """test dynamic id page by playwright"""
-    page = BasePage
+    page :Page = BasePage
 
     # go to dynamic id page
     page.get_by_text('Dynamic ID', exact=True).click()

@@ -11,7 +11,7 @@ from playwright.sync_api import Page, expect
 @pytest.mark.playwright_only
 def test_scrollbars_by_playwright(BasePage):
     """test scrollbars page by playwright"""
-    page = BasePage
+    page :Page = BasePage
 
     # go to scrollbars page
     page.get_by_text('Scrollbars').click()

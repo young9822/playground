@@ -10,7 +10,7 @@ from playwright.sync_api import Page, expect
 
 @pytest.mark.playwright_only
 def test_text_input_by_playwright(BasePage):
-    page = BasePage
+    page :Page = BasePage
 
     # go to test input page
     selection = 'Text Input'
