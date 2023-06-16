@@ -23,14 +23,17 @@ def test_sample_app_by_playwright(BasePage):
     use any non-empty user name and `pwd` as password.
     """
     # fill the login name and password
-    page.get_by_placeholder("User Name", exact=True).type("Young")
-    # page.screenshot(path="screenshot1.png")    
+    page.get_by_placeholder("User Name").click()
+    page.get_by_placeholder("User Name").fill("Young")
     page.get_by_placeholder("********").fill("pwd")
-    page.screenshot(path="screenshot2.png")
+    # page.screenshot(path="screenshot2.png")
+    # expect(page.get_by_placeholder("User Name")).to_have_value("Young")
+    # expect(page.get_by_placeholder("***")).to_have_value("pwd")
+    
     # click the login button
     page.get_by_role("button", name="Log In").click()
     # click the welcome message to validate
-    # page.get_by_text("Welcome, Young!").click()
+    page.get_by_text("Welcome, Young!").click()
     
 # with selenium
 from selenium.webdriver.common.by import By
