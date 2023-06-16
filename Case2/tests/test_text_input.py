@@ -28,7 +28,7 @@ def test_text_input_by_playwright(BasePage):
     page.get_by_placeholder("MyButton").type(new_name, delay=100)    
     # click the button
     page.get_by_text("Button That Should Change it's Name Based on Input Value").click()
-    # click the button again with the new name
+    # click the button again which has new name
     page.get_by_role('button', name=new_name).click()
 
 # with selenium
@@ -36,6 +36,14 @@ from selenium.webdriver.common.by import By
 
 @pytest.mark.selenium_only
 def test_text_input_by_selenium(driver):
-    driver.find_element(By.CSS_SELECTOR, \
-        "#overview > div > div:nth-child(2) > div:nth-child(4) > h3 > a").click()
+    driver.find_element(By.CSS_SELECTOR, "[href='/textinput']").click()
     assert driver.title == 'Text Input'
+
+    # enter a text in text input field
+    new_name = 'Thank you'
+    driver.find_element(By.CSS_SELECTOR, "[placeholder='MyButton']").send_keys(new_name)
+    # click the button
+    driver.find_element(By.CSS_SELECTOR, "#updatingButton").click()
+    # click the button again which has new name
+    driver.find_element(By.CSS_SELECTOR, "#updatingButton").click()
+

@@ -32,9 +32,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 @pytest.mark.selenium_only
 def test_client_side_delay_by_selenium(driver):
-    driver.find_element(By.CSS_SELECTOR, \
-        "#overview > div > div:nth-child(2) > div:nth-child(2) \
-        > h3 > a").click()
+    driver.find_element(By.CSS_SELECTOR, "[href='/clientdelay']").click()
     assert driver.title == 'Client Side Delay'
 
     # click the button

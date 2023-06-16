@@ -1,6 +1,7 @@
 """
 test_class_attribute.py
 Class Attribute: Check that class attribute based XPath is well formed
+but I used CSS selector in replacement of XPath as it's easy to use and simple
 
 """
 import pytest
@@ -30,8 +31,7 @@ from selenium.webdriver.common.by import By
 
 @pytest.mark.selenium_only
 def test_class_attribute_by_selenium(driver):
-    driver.find_element(By.CSS_SELECTOR, \
-        "#overview > div > div:nth-child(1) > div:nth-child(2) > h3 > a").click()
+    driver.find_element(By.CSS_SELECTOR, "[href='/classattr']").click()
     assert driver.title == 'Class Attribute'
 
     # click the blue button. css selector is better in this case

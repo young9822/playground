@@ -27,11 +27,9 @@ from selenium.webdriver.common.by import By
 def test_dynamic_id_by_selenium(driver): 
     """test dynamic id page by selenium"""       
     # go to dynamic id page
-    driver.find_element(By.CSS_SELECTOR, \
-        "#overview > div > div:nth-child(1) > div:nth-child(1) > h3 > a").click()
+    driver.find_element(By.CSS_SELECTOR, "[href='/dynamicid']").click()
     assert driver.title == 'Dynamic ID'
 
     # click the dynamic id button
     # you can't use the id because it will be changed continuously
-    driver.find_element(By.CSS_SELECTOR, \
-        "body > section:nth-child(2) > div:nth-child(1) > button:nth-child(6)").click()
+    driver.find_element(By.CSS_SELECTOR, "[class~='btn-primary']").click()

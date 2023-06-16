@@ -28,8 +28,7 @@ from selenium.webdriver.common.by import By
 def test_scrollbars_by_selenium(driver): 
     """test scrollbars page by selenium"""
     # go to scrollbars page
-    driver.find_element(By.CSS_SELECTOR, \
-        "#overview > div > div:nth-child(3) > div:nth-child(1) > h3 > a").click()
+    driver.find_element(By.CSS_SELECTOR, "[href='/scrollbars']").click()
     assert driver.title == 'Scrollbars'
 
     # click the hidden button

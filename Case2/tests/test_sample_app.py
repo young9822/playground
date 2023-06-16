@@ -40,8 +40,7 @@ from selenium.webdriver.common.by import By
 
 @pytest.mark.selenium_only
 def test_sample_app_by_selenium(driver):
-    driver.find_element(By.CSS_SELECTOR, \
-        "#overview > div > div:nth-child(4) > div:nth-child(2) > h3 > a").click()
+    driver.find_element(By.CSS_SELECTOR, "[href='/sampleapp']").click()
     assert driver.title == 'Sample App'
 
     # fill the login name and password
