@@ -2,6 +2,9 @@
 test_overlapped_element.py
 Overlapped Element: Entering text to a partially visible element may require scrolling it into view.
 
+[Young's comment]
+Sometimes, a creative way is required to break through a barrier. But with Playwright, it works without any additional action.
+
 """
 import pytest
 import time

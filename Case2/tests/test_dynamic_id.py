@@ -2,6 +2,9 @@
 test_dynamic_id.py
 Dynamic ID: Make sure you are not recording dynamic IDs of elements
 
+[Young's comment]
+In Selenium, CSS selector is a good choise to cover all cases
+
 """
 import pytest
 
