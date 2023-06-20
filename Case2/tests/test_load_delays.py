@@ -17,8 +17,7 @@ def test_load_delays_by_playwright(BasePage):
     page.get_by_role('link', name='Load Delay').click()
     expect(page).to_have_title('Load Delays')
     
-    # Ensure that a test is capable of waiting for a page to load
-    # click the button
+    # Ensure that a test is capable of waiting for a page to load    
     page.get_by_role('button', \
         name='Button Appearing After Delay').click()
     
@@ -26,12 +25,11 @@ def test_load_delays_by_playwright(BasePage):
 from selenium.webdriver.common.by import By
 
 @pytest.mark.selenium_only
-def test_overlapped_element_by_selenium(driver):
-    # go to Overlapped Element page
+def test_load_delay_by_selenium(driver):
+    # go to Load Delays page
     driver.find_element(By.CSS_SELECTOR, "[href='/loaddelay']").click()
     assert driver.title == 'Load Delays'
 
-    # Ensure that a test is capable of waiting for a page to load
-    # click the button
+    # Ensure that a test is capable of waiting for a page to load    
     assert driver.find_element(By.CSS_SELECTOR, \
         "button.btn.btn-primary").text == "Button Appearing After Delay"
