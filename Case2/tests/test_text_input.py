@@ -1,6 +1,10 @@
 """
 test_text_input.py
-Text Input: Entering text into an edit field may not have effect
+Text Input: Entering text with physical keyboard can be different from sending DOM events to an element. This page is specifically desined to illustrate this problem. There are cases when attempts to set a text via DOM events lead to nowhere and the only way to proceed is to emulate real keyboard input at OS level.
+
+[Scenario]
+Enter a text in text input field and click the button.
+And click the button again which has new name
 
 """
 import pytest
@@ -17,12 +21,6 @@ def test_text_input_by_playwright(BasePage):
     page.get_by_text(selection, exact=True).click()
     expect(page).to_have_title(selection)
 
-    """
-    Entering text with physical keyboard can be different from sending DOM events 
-    to an element. This page is specifically desined to illustrate this problem. 
-    There are cases when attempts to set a text via DOM events lead to nowhere 
-    and the only way to proceed is to emulate real keyboard input at OS level.
-    """
     # enter a text in text input field - fill() does not work
     new_name = "Thank you"
     page.get_by_placeholder("MyButton").type(new_name, delay=100)    

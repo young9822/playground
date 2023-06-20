@@ -2,6 +2,9 @@
 test_load_delays.py
 Load Delays: Server response may often come with an unpredictable delay. So a test must be able to patiently wait for page loaded event from a browser.
 
+[Scenario]
+Click the button
+
 """
 import pytest
 import time

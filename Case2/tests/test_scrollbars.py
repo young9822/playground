@@ -2,6 +2,9 @@
 test_scrollbars.py
 Scrollbars: Scrolling an element into view may be a tricky task
 
+[Scenario]
+Click the hidden button
+
 """
 import pytest
 

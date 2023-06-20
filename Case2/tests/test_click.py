@@ -2,6 +2,9 @@
 test_click.py
 Click: Physical mouse click and DOM event emulated click are differently handled by browsers. There are still cases, with sometimes hardly identifiable reasons, when an event based click does not work. The solution for this problem is emulating physical mouse click. This page is specifically designed to ignore event based click.
 
+[Scenario]
+Click the button and click it again
+
 [Young's comment]
 Couldn't find any difficuly from both Playwright and Selenium
 

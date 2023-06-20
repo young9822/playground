@@ -3,6 +3,10 @@ test_sample_app.py
 Sample App: Demo application with dynamically 
 generated element attributes
 
+[Scenario]
+Enter the user name and password and click the login button
+And check if the welcome message is appeared with the user name
+
 """
 import pytest
 

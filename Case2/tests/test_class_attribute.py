@@ -1,7 +1,12 @@
 """
 test_class_attribute.py
 Class Attribute: Check that class attribute based XPath is well formed
-but I used CSS selector in replacement of XPath as it's easy to use and simple
+
+[Scenario]
+Click the blue button and press ok in alert popup
+
+[Young's comment]
+This page is for XPATH exercise but I used CSS selector as it's easy to use and simple. And see how to handle with alert popup in both Playwright and Selenium
 
 """
 import pytest
@@ -18,9 +23,7 @@ def test_class_attribute_by_playwright(BasePage):
     page.get_by_text(selection, exact=True).click()
     expect(page).to_have_title(selection)
 
-    """
-    By default, dialogs are auto-dismissed by Playwright, so you don't have to handle them. However, you can register a dialog handler before the action that triggers the dialog to either dialog.accept() or dialog.dismiss() it.
-    """
+    # By default, dialogs are auto-dismissed by Playwright, so you don't have to handle them. However, you can register a dialog handler before the action that triggers the dialog to either dialog.accept() or dialog.dismiss() it.
     # setup a dialog handler to accept but it's not required in this case
     # page.on("dialog", lambda dialog: dialog.accept())
     # click the blue button

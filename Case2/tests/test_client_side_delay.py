@@ -2,6 +2,12 @@
 test_client_side_delay.py
 Client Side Dealy: Some elements may appear after client-side time consuming JavaScript calculations
 
+[Scenario]
+Click the button and check if the expected text is appeared
+
+[Young's comment]
+In case of Selenium, the explicit wait with WebDriverWait is required. Or it fails. In Playwright, it works correctly without any additional action thanks to its auto-waiting feature.
+
 """
 import pytest
 
@@ -21,7 +27,7 @@ def test_client_side_delay_by_playwright(BasePage):
     page.get_by_role('button', \
         name='Button Triggering Client Side Logic').click()
     # click the text to verify if it's disappeared
-    # wonderful! passed by auto-waiting feature
+    # no additional action is required due to its auto-waiting feature
     page.get_by_text('Data calculated on the client side.').click()
 
 # with selenium
