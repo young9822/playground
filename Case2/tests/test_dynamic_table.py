@@ -30,3 +30,34 @@ def test_dynamic_table_by_playwright(BasePage):
     
     expect(page.locator('.bg-warning')).to_have_text(expectedMsg)
 
+# with selenium
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.webdriver import WebDriver
+
+@pytest.mark.selenium_only
+def test_dynamic_table_by_selenium(driver :WebDriver):
+    driver.find_element(By.CSS_SELECTOR, "[href='/dynamictable']").click()
+    assert driver.title == 'Dynamic Table'
+
+    # get the CPU share of Chrome
+    # first, select the table to narrow it down
+    browserTable = driver.find_element(By.CSS_SELECTOR, "[role='table']")
+    browserGroup = browserTable.find_element(By.CSS_SELECTOR, "[role='rowgroup']:last-child")
+    
+    # second, find the row of Chrome
+    currentShare = "NA"
+    browsers = browserGroup.find_elements(By.CSS_SELECTOR, "[role='row']")
+    for browser in browsers:
+        browserName = browser.find_element(By.CSS_SELECTOR, "[role='cell']").text
+        if browserName == 'Chrome':
+            # finally, search the column which has CPU share of Chrome
+            cells = browser.find_elements(By.CSS_SELECTOR, "[role='cell']")
+            for cell in cells:
+                if cell.text.__contains__("%"):
+                    currentShare = cell.text
+    
+    expectedMsg = f"Chrome CPU: {currentShare}"
+    # print(expectedMsg)
+    
+    assert expectedMsg == driver.find_element(By.CSS_SELECTOR, ".bg-warning").text
+
