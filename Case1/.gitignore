@@ -1,1 +1,4 @@
+__pycache__/*
+utilities/__pycache__/*
+pytest.ini
 AutomationPytest.html
