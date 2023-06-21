@@ -45,6 +45,7 @@ def test_progress_bar_by_playwright(BasePage):
 # with selenium
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.support.wait import WebDriverWait
 
 @pytest.mark.selenium_only
 def test_progress_bar_by_selenium(driver :WebDriver):
@@ -55,6 +56,13 @@ def test_progress_bar_by_selenium(driver :WebDriver):
     driver.find_element(By.CSS_SELECTOR, "#startButton").click()
     
     # wait for the progress bar to reach 75%
+    element = WebDriverWait(driver, 60, 0.01).until(
+        lambda x: int(x.find_element(By.CSS_SELECTOR, \
+            "#progressBar").get_attribute('aria-valuenow')) >= 75
+    )
+
+    """
+    if you're not familiar with WebDriverWait, refer to the following
     while True:
         curValue = int(driver.find_element(By.CSS_SELECTOR, \
             "#progressBar").get_attribute('aria-valuenow'))
@@ -62,6 +70,7 @@ def test_progress_bar_by_selenium(driver :WebDriver):
             break
         else:
             time.sleep(0.01)
+    """
 
     # click the stop button
     driver.find_element(By.CSS_SELECTOR, "#stopButton").click()
