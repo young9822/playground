@@ -1,4 +1,6 @@
 __pycache__/*
 utilities/__pycache__/*
+tests/__pycache__/*
+pages/__pycache__/*
 pytest.ini
 AutomationPytest.html
