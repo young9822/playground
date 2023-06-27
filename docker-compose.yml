@@ -1,0 +1,19 @@
+version: '1'
+
+volumes:
+  myOutput:
+
+services:
+  pytest-playwright:
+    image: pytest-playwright
+    volumes:
+      - ./result:/result:rw
+      - ./Case2:/Case2:rw
+    command: pytest -m playwright_only Case2
+  pytest-selenium:
+    image: pytest-selenium
+    volumes:
+      - ./result:/result:rw
+      - ./Case2:/Case2:rw
+    command: pytest -m selenium_only Case2
+  
