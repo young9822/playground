@@ -1,29 +1,36 @@
 """
-test_basic_auth.py
-Basic Auth: Exercise basic authentication using a login dialog
+test_add_remove.py
+Add/Remove Elements
 
 [Scenario]
-Click 'Basic Auth' link
-Fill the user name and the password field with 'admin'
-Click the login button
-Check if 'Congraturation' message is appeared
+Click 'Add Element' button 3 times
+Click all 'Delete' buttons one by one
+Check if there is no 'Delete'
 
 [Young's comment]
 
 
 """
 import pytest
+import time
 
 # with playwright
 from playwright.sync_api import Page, expect
 
 @pytest.mark.playwright_only
-def test_basic_auth_by_playwright(BasePage):
+def test_add_remove_by_playwright(BasePage):
     page :Page = BasePage
 
-    # go to Basic Auth page
-    selection = 'Basic Auth'
-    page.get_by_role('link', name=selection).click()
+    # go to Add/Remove Elements page
+    page.get_by_role('link', name='Add/Remove Elements').click()
 
-    # fill the user name and the password field with 'admin'
-    
+    # click 'Add Element' button 5 times
+    for i in range(5):
+        page.get_by_role('button', name='Add Element').click()
+
+    # click all 'Delete' buttons one by one
+    for i in range(5):
+        page.get_by_role('button', name='Delete').first.click()
+
+    # check if there is no 'Delete'
+    expect(page.get_by_role('button', name='Delete')).not_to_be_attached()

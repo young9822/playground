@@ -1,6 +1,7 @@
-Case?/.DS_Store
-Case?/.venv
-Case?/__pychache__
+Case*/.DS_Store
+Case*/.venv
+Case*/__pycache__
+Case*/*/__pycache__
 .vscode
 .pytest_cache
 .DS_Store
