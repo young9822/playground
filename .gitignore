@@ -1,6 +1,8 @@
+Case?/.DS_Store
+Case?/.venv
+Case?/__pychache__
+.vscode
+.pytest_cache
+.DS_Store
 *.html
 *.png
-Case2/pytest.ini
-Case2/.DS_Store
-.DS_Store
-.vscode/settings.json
