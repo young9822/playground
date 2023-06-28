@@ -9,5 +9,5 @@ services:
     volumes:
       - ./result:/result:rw
       - ./Case2:/Case2:rw
-    command: pytest -m playwright_only Case2
+    command: pytest -m playwright_only --browser webkit --browser firefox --browser chromium Case2
   
