@@ -11,3 +11,7 @@ This [website](http://www.uitestingplayground.com/home) (not from me) is special
 
 :octocat: Python, Pytest, Playwright, Selenium, Docker, Docker-Compose
 
+## Case 3: Playwright Exercises
+I found another [website](https://the-internet.herokuapp.com) (thank you), which is specially designed to exercise the special cases similar to Case 2. It has lots of interesting cases which will be helpful to increase your understanding for Playwright.
+
+:octocat: Python, Pytest, Playwright
