@@ -8,7 +8,7 @@ Click all 'Delete' buttons one by one
 Check if there is no 'Delete'
 
 [Young's comment]
-
+Nothing special
 
 """
 import pytest
@@ -22,7 +22,9 @@ def test_add_remove_by_playwright(BasePage):
     page :Page = BasePage
 
     # go to Add/Remove Elements page
-    page.get_by_role('link', name='Add/Remove Elements').click()
+    pageName = 'Add/Remove Elements'
+    page.get_by_role('link', name=pageName).click()
+    expect(page.get_by_role('heading')).to_have_text(pageName)
 
     # click 'Add Element' button 5 times
     for i in range(5):
