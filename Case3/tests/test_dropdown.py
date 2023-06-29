@@ -29,7 +29,9 @@ def test_drag_drop_by_playwright(BasePage):
     # click dropdown list and select option 1
     dropdownLocator.select_option(value='1')
     assert page.locator("option[value='1']").get_attribute('selected') == 'selected'
+    assert page.locator("option[value='2']").get_attribute('selected') == None
 
     # click dropdown list and select option 2
     dropdownLocator.select_option(value='2')
+    assert page.locator("option[value='1']").get_attribute('selected') == None
     assert page.locator("option[value='2']").get_attribute('selected') == 'selected'
