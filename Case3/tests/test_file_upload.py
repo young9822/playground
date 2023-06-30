@@ -11,7 +11,6 @@ check if it's uploaded
 
 """
 import pytest
-import os
 
 # with playwright
 from playwright.sync_api import Page, expect
@@ -27,13 +26,13 @@ def test_file_upload_by_playwright(BasePage):
 
     # choose a file to upload
     file_name = "testpic.jpg"
-    my_downloads = os.environ.get('MY_DOWNLOADS')
+    upload_from = "./file"
 
     with page.expect_file_chooser() as fc_info:
         page.locator("#file-upload").click()
 
     file_chooser = fc_info.value
-    file_chooser.set_files(f"{my_downloads}/{file_name}")
+    file_chooser.set_files(f"{upload_from}/{file_name}")
 
     # click upload button
     page.get_by_role('button', name='Upload').click()
