@@ -10,6 +10,7 @@ click testpic.jpg and check if it's downloaded
 
 """
 import pytest
+import os
 
 # with playwright
 from playwright.sync_api import Page, expect
@@ -28,12 +29,12 @@ def test_file_download_by_playwright(BasePage):
         page.get_by_role('link', name="testpic.jpg", exact=True).click()
     
     download = download_info.value
+    save_as_to = os.environ.get('MY_DOWNLOADS')
 
     print(f"{download}")
     print(f"{download.suggested_filename}: {download.path()}")
 
-    # need to update the following path for yours
-    # download.save_as("/YOUR/PATH/TO/DOWNLOAD/"+download.suggested_filename)
+    download.save_as(f"{save_as_to}/{download.suggested_filename}")
     
     download.delete()
 
