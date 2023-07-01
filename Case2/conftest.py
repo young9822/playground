@@ -22,12 +22,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.utils import ChromeType
 
 @pytest.fixture(scope="module")
-def driver(request):
+def driver():
     """base fixture for selenium: initialize a webdriver for chromium"""
     chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
     chrome_options = Options()
     options = [
-        "--headless",
+        "--headless=new",
         "--incognito",
         "--disable-gpu",
         "--start-maximized",

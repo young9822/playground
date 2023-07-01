@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.chrome import ChromeType
 
 @pytest.fixture(params=["chrome"])  # , "safari", "edge"])
-def init_driver(request):
+def init_driver(request: pytest.FixtureRequest):
     """init_driver: initialize a webdriver for each browser and close it after a test"""
     if request.param == "safari":
         driver = webdriver.Safari()
