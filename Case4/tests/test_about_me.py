@@ -34,3 +34,9 @@ def test_about_me(SetupiOS):
     elName = driver.find_element(AppiumBy.ACCESSIBILITY_ID, value='Favorite Colors')
     assert elName.text == 'Favorite Colors'
 
+    # move to fun facts view
+    driver.find_element(AppiumBy.ACCESSIBILITY_ID, value='Fun Facts').click()
+
+    # check fun facts view with title
+    elTitle = driver.find_element(AppiumBy.IOS_PREDICATE, value="label == 'Fun Facts' AND name == 'Fun Facts' AND value == 'Fun Facts'")
+    assert elTitle.text == 'Fun Facts'
