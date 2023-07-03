@@ -1,7 +1,6 @@
-# Young's Playground
+# Young's Playground [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/younghoon-lee-260382180/)
 Here is Young's playground for testing with automation. Please refer to the following for the detail.
 <br><br>
-[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/younghoon-lee-260382180/)
 
 ## Case 1: Page Object Model
 A page object is an object-oriented class that serves as an interface to a page of your AUT. The tests then use the methods of this page object class whenever they need to interact with the UI of that page. The benefit is that if the UI changes for the page, the tests themselves don’t need to change, only the code within the page object needs to change. 
