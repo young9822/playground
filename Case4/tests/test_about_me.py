@@ -1,3 +1,14 @@
+"""
+test_about_me.py
+
+[Scenario]
+Click each tab and check if the title are correct
+
+[Young's comment]
+simple and easy one
+
+"""
+
 from appium.webdriver.webdriver import WebDriver
 from appium.webdriver.common.appiumby import AppiumBy
 
