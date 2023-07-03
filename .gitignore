@@ -2,9 +2,11 @@ Case*/.DS_Store
 Case*/.venv
 Case*/__pycache__
 Case*/*/__pycache__
+test-results/*
+result/*
 .vscode
 .pytest_cache
 .DS_Store
 *.html
 *.png
-test-results/*
+

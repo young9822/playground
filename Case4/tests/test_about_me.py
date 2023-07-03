@@ -24,3 +24,13 @@ def test_about_me(SetupiOS):
     # check story view with title
     elTitle = driver.find_element(AppiumBy.IOS_PREDICATE, value="label == 'Favorites' AND name == 'Favorites' AND value == 'Favorites'")
     assert elTitle.text == 'Favorites'
+    
+    elName = driver.find_element(AppiumBy.ACCESSIBILITY_ID, value='Hobbies')
+    assert elName.text == 'Hobbies'
+
+    elName = driver.find_element(AppiumBy.ACCESSIBILITY_ID, value='Foods')
+    assert elName.text == 'Foods'
+
+    elName = driver.find_element(AppiumBy.ACCESSIBILITY_ID, value='Favorite Colors')
+    assert elName.text == 'Favorite Colors'
+
