@@ -8,6 +8,7 @@ def SetupiOS():
         platformName = 'iOS',
         automationName = 'XCUITest',
         deviceName = 'iPhone 14',
+        headless = False,
         language='en',
         locale='US'
     )
