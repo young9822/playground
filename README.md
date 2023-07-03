@@ -21,9 +21,9 @@ I found another [website](https://the-internet.herokuapp.com) (thank you), which
 <br><br>
   
 ## Case 4: Appium Exercises
-Appium is an open-source project and ecosystem of related software, designed to facilitate UI automation of many app platforms, including mobile (iOS, Android, Tizen), browser (Chrome, Firefox, Safari), desktop (macOS, Windows), TV (Roku, tvOS, Android TV, Samsung), and more. These exercises show how to test the user scenario in iOS app, using Appium and iOS simulator. The [sample apps](https://developer.apple.com/tutorials/sample-apps) from Apple are used as AUT.
+Appium is an open-source project and ecosystem of related software, designed to facilitate UI automation of many app platforms, including mobile (iOS, Android, Tizen), browser (Chrome, Firefox, Safari), desktop (macOS, Windows), TV (Roku, tvOS, Android TV, Samsung), and more. These exercises show how to test the user scenario in iOS app, using Appium and iOS simulator. The [sample iOS apps](https://developer.apple.com/tutorials/sample-apps) from Apple are used as AUT.
 
-:octocat: Appium, Python, Pytest
+:octocat: Appium, iOS, Python, Pytest
 <br><br>
 
 
