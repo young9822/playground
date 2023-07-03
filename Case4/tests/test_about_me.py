@@ -12,7 +12,7 @@ import pytest
 from appium.webdriver.webdriver import WebDriver
 from appium.webdriver.common.appiumby import AppiumBy
 
-@pytest.mark.fixt_data('About Me')
+@pytest.mark.app_name('About Me')
 def test_about_me(ios_driver):
     driver: WebDriver = ios_driver
         

@@ -30,7 +30,7 @@ def ios_driver_factory():
 
 @pytest.fixture
 def ios_driver(request: FixtureRequest):
-    marker = request.node.get_closest_marker("fixt_data")
+    marker = request.node.get_closest_marker("app_name")
     if marker is None:
         assert marker is not None, 'The app name missed in marker'
     else:
