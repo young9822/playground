@@ -1,5 +1,6 @@
-# Young's Playground
+# Young's Playground [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/younghoon-lee-260382180/)
 Here is Young's playground for testing with automation. Please refer to the following for the detail.
+<br><br>
 
 ## Case 1: Page Object Model
 A page object is an object-oriented class that serves as an interface to a page of your AUT. The tests then use the methods of this page object class whenever they need to interact with the UI of that page. The benefit is that if the UI changes for the page, the tests themselves don’t need to change, only the code within the page object needs to change. 
@@ -20,7 +21,9 @@ I found another [website](https://the-internet.herokuapp.com) (thank you), which
 <br><br>
   
 ## Case 4: Appium Exercises
-Appium is an open-source project and ecosystem of related software, designed to facilitate UI automation of many app platforms, including mobile (iOS, Android, Tizen), browser (Chrome, Firefox, Safari), desktop (macOS, Windows), TV (Roku, tvOS, Android TV, Samsung), and more. These exercises show how to test the user scenario in iOS app, using Appium and iOS simulator. The sample [apps](https://developer.apple.com/tutorials/sample-apps) from Apple are used as AUT.
+Appium is an open-source project and ecosystem of related software, designed to facilitate UI automation of many app platforms, including mobile (iOS, Android, Tizen), browser (Chrome, Firefox, Safari), desktop (macOS, Windows), TV (Roku, tvOS, Android TV, Samsung), and more. These exercises show how to test the user scenario in iOS app, using Appium and iOS simulator. The [sample apps](https://developer.apple.com/tutorials/sample-apps) from Apple are used as AUT.
 
 :octocat: Appium, Python, Pytest
 <br><br>
+
+
