@@ -1,7 +1,6 @@
 # Young's Playground
 Here is Young's playground for testing with automation. Please refer to the following for the detail.
 <br><br>
-![GitHub top language](https://img.shields.io/github/languages/top/young9822/portfolio?color=blue)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/younghoon-lee-260382180/)
 
 ## Case 1: Page Object Model
