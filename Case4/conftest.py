@@ -38,5 +38,5 @@ def ios_driver(request: FixtureRequest):
 
     yield driver
 
-    if driver:
+    if driver is not None:
         driver.quit()

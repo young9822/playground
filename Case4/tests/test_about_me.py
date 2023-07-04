@@ -15,9 +15,6 @@ from appium.webdriver.common.appiumby import AppiumBy
 @pytest.mark.app_name('About Me')
 def test_about_me(ios_driver):
     driver: WebDriver = ios_driver
-        
-    elTitle = driver.find_element(AppiumBy.ACCESSIBILITY_ID, value='All About')
-    assert elTitle.text == 'All About'
 
     # check home view with title
     elTitle = driver.find_element(AppiumBy.ACCESSIBILITY_ID, value='All About')
