@@ -11,7 +11,7 @@ A page object is an object-oriented class that serves as an interface to a page 
 ## Case 2: Playwright vs. Selenium
 This [website](http://www.uitestingplayground.com/home) (not from me) is specially designed to exercise the special cases such as dynamic ID, hidden button, hidden layers, load delay, which has difficult cases to handle with. I developped the sample test scripts with both Playwright and Selenium to compare. I was able to handle them by both Playwright and Selenium but the way to handle were a bit different from each other. And you can find pros and cons of each framework via these samples. Do you think which is better?
 
-:octocat: Playwright, Selenium, Docker, Docker-Compose, Python, Pytest
+:octocat: Playwright, Selenium, Docker, Python, Pytest
 <br><br>
   
 ## Case 3: Playwright Exercises
