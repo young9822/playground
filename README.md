@@ -1,5 +1,5 @@
 # Young's Playground [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/younghoon-lee-260382180/)
-Here is Young's playground for testing with automation. Please refer to the following for the detail.
+Welcome! Here is Young's playground for testing with automation. Please refer to the following for the detail. Enjoy automation!
 <br><br>
 
 ## Case 1: Page Object Model
