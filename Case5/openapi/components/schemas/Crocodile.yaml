@@ -1,0 +1,18 @@
+type: array
+items:
+  type: object
+  required:
+    - name
+    - sex
+    - date_of_birth
+  properties:
+    id:
+      type: number
+    name:
+      type: string
+    sex:
+      type: string
+    date_of_birth:
+      type: string
+    age:
+      type: number

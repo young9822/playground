@@ -1,0 +1,40 @@
+get:
+  summary: Get a list of all my crocodiles
+  description: Private endpoint. List all my crocodiles.
+  operationId: my@crocodile@get
+  responses:
+    '200':
+      description: Successfully returned a list of crocodiles
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Crocodile.yaml
+    '400':
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/400Error.yaml
+post:
+  summary: Create a new crocodile
+  description: Private endpoint. Create a new crocodile (max 100).
+  operationId: my@crocodile@post
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Crocodile.yaml
+  responses:
+    '200':
+      description: Successfully created a new user.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Crocodile.yaml
+    '400':
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/400Error.yaml

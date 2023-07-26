@@ -1,0 +1,16 @@
+type: array
+items:
+  type: object
+  properties:
+    id:
+      type: number
+    username:
+      type: string
+    first_name:
+      type: string
+    last_name:
+      type: string
+    email:
+      type: string
+    date_joined:
+      type: string

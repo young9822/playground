@@ -1,0 +1,23 @@
+post:
+  summary: Basic login procedure
+  description: Public endpoint. HTTP basic-auth login.
+  operationId: auth@basic@login
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/basicLogin.yaml
+  responses:
+    '200':
+      description: Successfully logined.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/userInfo.yaml
+    '400':
+      description: Incorrect username or password.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/400Error.yaml
