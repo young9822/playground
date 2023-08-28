@@ -2,7 +2,7 @@
 test_search.py
 
 Note
-
++ test search feature and product detail page
 
 """
 import pytest
@@ -48,10 +48,10 @@ class TestSearch(BaseTest):
         searchResultPage = homePage.search(siteInfo.searchItem['name'])
 
         # if the 'heading' contains the search item name
-        expect(searchResultPage.get_el('heading')).to_contain_text(siteInfo.searchItem['name'])
+        expect(searchResultPage.get_el('heading search')).to_contain_text(siteInfo.searchItem['name'])
 
         # if the 'search field' has the search item name as a default
-        expect(searchResultPage.get_el('search field')).to_have_value(siteInfo.searchItem['name'])
+        expect(searchResultPage.get_el('textbox search')).to_have_value(siteInfo.searchItem['name'])
 
         """
         As a user,

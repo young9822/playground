@@ -2,7 +2,7 @@
 test_login.py
 
 Note
-
++ test login feature with invalid and valid user information
 
 """
 import pytest
@@ -50,7 +50,7 @@ class TestLogin(BaseTest):
         accountPage :AccountPage = loginPage.login(username, password)        
 
         # if the warning message is correct
-        expect(loginPage.warningMessageLoc).to_contain_text(loginPage.expecetedWarningMessage)
+        expect(loginPage.get_el('Warning')).to_contain_text(loginPage.expecetedWarningMessage)
 
     @pytest.mark.regression
     # @pytest.mark.e2e
@@ -84,7 +84,7 @@ class TestLogin(BaseTest):
         accountPage :AccountPage = loginPage.login(username, password)     
 
         # if the heading of the account page has 'My Account'
-        expect(loginPage.warningMessageLoc).to_contain_text(loginPage.expecetedWarningMessage)
+        expect(loginPage.get_el('Warning')).to_contain_text(loginPage.expecetedWarningMessage)
 
     @pytest.mark.regression
     # @pytest.mark.e2e

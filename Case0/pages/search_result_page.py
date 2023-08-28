@@ -12,8 +12,8 @@ class SearchResultPage(BasePage):
         self.page = page
 
         self._locs = {
-            'heading': "#entry_212456 > h1",
-            'search field': "#input-search",
+            'heading search': "#entry_212456 > h1",
+            'textbox search': "#input-search",
             'first item': "#entry_212469 > div > div:nth-child(1) > div > div.caption > h4 > a",
         }
     

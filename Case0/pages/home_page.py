@@ -3,7 +3,7 @@ from os import environ
 from pages.base_page import BasePage
 from pages.login_page import LoginPage
 from pages.search_result_page import SearchResultPage
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 class HomePage(BasePage):
     """HomePage class which has locators and methods for 'Home' page"""

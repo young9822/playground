@@ -2,7 +2,7 @@
 test_home.py
 
 Note
-
++ test basic structure of home page
 
 """
 import pytest
@@ -17,7 +17,7 @@ class TestHome(BaseTest):
     page = BaseTest
 
     @pytest.mark.regression
-    @pytest.mark.e2e
+    # @pytest.mark.e2e
     def test_valid_home(self, page :Page) -> None:
         """
         Validate the following for 'Home' page
