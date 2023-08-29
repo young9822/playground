@@ -1,9 +1,10 @@
 """home_page.py: definition of HomePage class"""
-from os import environ
+from playwright.sync_api import Page
+
 from pages.base_page import BasePage
 from pages.login_page import LoginPage
 from pages.search_result_page import SearchResultPage
-from playwright.sync_api import Page
+from pages.laptops_page import LaptopsPage
 
 class HomePage(BasePage):
     """HomePage class which has locators and methods for 'Home' page"""
@@ -44,14 +45,28 @@ class HomePage(BasePage):
                 'FROM THE BLOG'
         ]
 
-    def search(self, product :str):
+        # locators
+        self._locs = {
+            'menu category': "#entry_217832 > a",
+            'category laptops': "#widget-navbar-217841 > ul > li:nth-child(6) > a > div.info > span",
+        }
+
+    # move to search result page
+    def search(self, product :str) -> SearchResultPage:
         self.page.get_by_role('textbox', name='search').fill(product)
         self.page.get_by_role('button', name='search').click()
         return SearchResultPage(self.page)
     
-    def goto_login(self):
+    # move to login page
+    def goto_login(self) -> LoginPage:
         self.page.locator("#widget-navbar-217834 > ul > li:nth-child(6) > a").click()
         return LoginPage(self.page)
+    
+    # move to one of category pages
+    def goto_category(self, category) -> LaptopsPage:
+        self.get_el('menu category').click()
+        self.get_el(category).click()
+        return LaptopsPage(self.page)
     
     def get_el_menu(self, menu :str):
         return self.page.get_by_role('link', name=menu).first

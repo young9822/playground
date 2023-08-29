@@ -22,7 +22,9 @@ class LoginPage(BasePage):
                 'Warning': "#account-login > div.alert.alert-danger.alert-dismissible",
         }
 
-        self.expecetedWarningMessage = 'Warning: No match for E-Mail Address and/or Password.'
+        self.messages = {
+            'warning': 'Warning: No match for E-Mail Address and/or Password.'
+        }
     
     def login(self, username :str, password :str) -> AccountPage:
         self.get_el('E-Mail Address').clear()

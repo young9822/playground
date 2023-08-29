@@ -5,7 +5,7 @@ from pages.base_page import BasePage
 from playwright.sync_api import Page
 
 class ProductDetailsPage(BasePage):
-    """SearchResultPage class which has locators and methods for 'Login' page"""
+    """SearchResultPage class"""
     def __init__(self, page :Page):
         """__init__"""
         self.page = page

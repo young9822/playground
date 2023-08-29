@@ -20,8 +20,8 @@ class TestSubscription(BaseTest):
     page = BaseTest
 
     @pytest.mark.regression
-    @pytest.mark.e2e
-    def test_enable_subscription(self, page :Page) -> None:
+    # @pytest.mark.e2e
+    def test_toggle_subscription(self, page :Page) -> None:
         """
         Validate the following for 'Home' page
 
