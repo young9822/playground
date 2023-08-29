@@ -45,13 +45,14 @@ class TestSearch(BaseTest):
         2. search field
         """
         # enter 'iPhone' in search field and click the search button
-        searchResultPage = homePage.search(siteInfo.searchItem['name'])
+        searchResultPage = homePage.search(siteInfo.searchItems['iphone']['name'])
 
         # if the 'heading' contains the search item name
-        expect(searchResultPage.get_el('heading search')).to_contain_text(siteInfo.searchItem['name'])
+        expect(searchResultPage.get_el('heading search')).to_be_visible()
+        expect(searchResultPage.get_el('heading search')).to_contain_text(siteInfo.searchItems['iphone']['name'])
 
         # if the 'search field' has the search item name as a default
-        expect(searchResultPage.get_el('textbox search')).to_have_value(siteInfo.searchItem['name'])
+        expect(searchResultPage.get_el('textbox search')).to_have_value(siteInfo.searchItems['iphone']['name'])
 
         """
         As a user,
@@ -69,7 +70,7 @@ class TestSearch(BaseTest):
         
         # validate the name of selected item
         expect(productDetailPage.get_el('first item name')).to_be_visible()
-        expect(productDetailPage.get_el('first item name')).to_have_text(siteInfo.searchItem.get('name'))
+        expect(productDetailPage.get_el('first item name')).to_have_text(siteInfo.searchItems['iphone']['name'])
 
         # validate the brand of selected item
-        expect(productDetailPage.get_el('first item brand')).to_have_text(siteInfo.searchItem.get('brand'))
+        expect(productDetailPage.get_el('first item brand')).to_have_text(siteInfo.searchItems['iphone']['brand'])

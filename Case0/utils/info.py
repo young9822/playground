@@ -26,7 +26,13 @@ class SiteInfo():
             }
         }
 
-        self.searchItem = {
-            'name': 'iPhone',
-            'brand': 'Apple'
+        self.searchItems = {
+            'iphone': {
+                'name': 'iPhone',
+                'brand': 'Apple'
+            },
+            'imac': {
+                'name': 'iMac',
+                'brand': 'Apple'
+            },
         }

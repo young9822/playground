@@ -4,6 +4,7 @@ from playwright.sync_api import Page
 from pages.base_page import BasePage
 from pages.login_page import LoginPage
 from pages.search_result_page import SearchResultPage
+from pages.shopping_cart_page import ShoppingCartPage
 from pages.laptops_page import LaptopsPage
 
 class HomePage(BasePage):
@@ -49,6 +50,8 @@ class HomePage(BasePage):
         self._locs = {
             'menu category': "#entry_217832 > a",
             'category laptops': "#widget-navbar-217841 > ul > li:nth-child(6) > a > div.info > span",
+            'button shopping cart': "#entry_217825 > a > div.cart-icon > div > svg",
+            'button edit cart': "#entry_217850 > a",
         }
 
     # move to search result page
@@ -67,6 +70,11 @@ class HomePage(BasePage):
         self.get_el('menu category').click()
         self.get_el(category).click()
         return LaptopsPage(self.page)
+    
+    def goto_shopping_cart(self) -> ShoppingCartPage:
+        self.get_el('button shopping cart').click()
+        self.get_el('button edit cart').click()
+        return ShoppingCartPage(self.page)
     
     def get_el_menu(self, menu :str):
         return self.page.get_by_role('link', name=menu).first
