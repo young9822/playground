@@ -68,6 +68,7 @@ class TestSearch(BaseTest):
         productDetailPage = searchResultPage.select_first_item()        
         
         # validate the name of selected item
+        expect(productDetailPage.get_el('first item name')).to_be_visible()
         expect(productDetailPage.get_el('first item name')).to_have_text(siteInfo.searchItem.get('name'))
 
         # validate the brand of selected item

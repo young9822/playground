@@ -19,7 +19,7 @@ class TestCategory(BaseTest):
     page = BaseTest
 
     @pytest.mark.regression
-    @pytest.mark.e2e
+    # @pytest.mark.e2e
     def test_category(self, page :Page) -> None:
         """
         Validate the following for 'Home' page
@@ -45,6 +45,7 @@ class TestCategory(BaseTest):
         laptopsPage :LaptopsPage = homePage.goto_category('category laptops')
 
         # check the heading
+        expect(laptopsPage.get_el('heading')).to_be_visible()
         expect(laptopsPage.get_el('heading')).to_have_text(laptopsPage.messages['heading'])
 
         """
@@ -64,4 +65,5 @@ class TestCategory(BaseTest):
         macsPage :MacsPage = laptopsPage.goto_macs()
 
         # check the heading
-        expect(macsPage.get_el('heading')).to_have_text(macsPage.messages['heading'])       
+        expect(macsPage.get_el('heading')).to_be_visible()
+        expect(macsPage.get_el('heading')).to_have_text(macsPage.messages['heading'])

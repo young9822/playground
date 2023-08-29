@@ -141,6 +141,7 @@ class TestLogin(BaseTest):
         accountPage.get_el('menu logout').click()
 
         # check heading
+        expect(accountPage.get_el('heading logout')).to_be_visible()
         expect(accountPage.get_el('heading logout')).to_have_text('Account Logout')
 
         # click continue button
