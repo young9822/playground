@@ -1,8 +1,9 @@
 """
-laptops_page.py: definition of laptops page class
+laptops_page.py: definition of Laptops page class
 """
-from pages.base_page import BasePage
 from playwright.sync_api import Page
+from pages.base_page import BasePage
+from pages.macs_page import MacsPage
 
 class LaptopsPage(BasePage):
     """LaptopsPage class"""
@@ -12,8 +13,15 @@ class LaptopsPage(BasePage):
 
         self._locs = {
             'heading': "#entry_212392 > h1",
+            'macs': "#entry_212396 > div > a:nth-child(1) > figure",
+            'windows': "#entry_212396 > div > a:nth-child(2) > figure",
         }
 
         self.messages = {
             'heading': 'Laptops'
         }
+
+    def goto_macs(self) -> MacsPage:
+        # move to 'Macs' page
+        self.get_el('macs').click()
+        return MacsPage(self.page)
