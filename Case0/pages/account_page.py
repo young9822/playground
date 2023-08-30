@@ -24,7 +24,6 @@ class AccountPage(BasePage):
 
         self.message = {
             'success': 'Success',
-            'fail': 'Fail',
         }
 
     def goto_subscription(self):
