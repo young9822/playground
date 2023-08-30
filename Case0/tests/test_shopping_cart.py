@@ -22,7 +22,7 @@ class TestShoppingCart(BaseTest):
     page = BaseTest
 
     @pytest.mark.regression
-    @pytest.mark.e2e
+    # @pytest.mark.e2e
     def test_shopping_cart(self, page :Page) -> None:
         """
         Validate product cart feature. Add 2 products in cart and remove all

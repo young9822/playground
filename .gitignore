@@ -1,5 +1,7 @@
 Case*/.DS_Store
 Case*/.venv
+Case*/result
+Case*/test-results
 Case*/__pycache__
 Case*/*/__pycache__
 test-results/*
