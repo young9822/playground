@@ -13,15 +13,15 @@ class SiteInfo():
         # get email and password from os variables
         self.userInfo = {
             'valid': {
-                'username': environ.get('test_email'), 
-                'password': environ.get('test_password')
+                'username': environ['TEST_EMAIL'], 
+                'password': environ['TEST_PASSWORD']
             },
             'invalidUsername': {
                 'username': 'invalid@example.io', 
-                'password': environ.get('test_password')
+                'password': environ['TEST_PASSWORD']
             },
             'invalidPassword': {
-                'username': environ.get('test_email'), 
+                'username': environ['TEST_EMAIL'], 
                 'password': '1234qewradsf'
             }
         }
