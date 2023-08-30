@@ -14,10 +14,12 @@ class HomePage(BasePage):
         self.page = page
 
         # texts
-        self.expectedTitle = "Your Store"
-        self.dummyMessage = "This is a dummy website for Web Automation Testing"
-        self.copyRightMsg = "© LambdaTest - Powered by OpenCart"
-
+        self.messages = {
+            'title': 'Your Store',
+            'dummy': 'This is a dummy website for Web Automation Testing',
+            'copyright': '© LambdaTest - Powered by OpenCart'
+        }
+        
         # menu & buttons
         self.menus = [
                 "Home",
@@ -48,10 +50,10 @@ class HomePage(BasePage):
 
         # locators
         self._locs = {
-            'menu category': "#entry_217832 > a",
-            'category laptops': "#widget-navbar-217841 > ul > li:nth-child(6) > a > div.info > span",
-            'button shopping cart': "#entry_217825 > a > div.cart-icon > div > svg",
-            'button edit cart': "#entry_217850 > a",
+            'menu category': self.page.get_by_role('button', name='Shop by Category'),
+            'category laptops': self.page.get_by_role('link', name='Laptops & Notebooks'),
+            'button shopping cart': self.page.locator("#entry_217825"),
+            'button edit cart': self.page.get_by_role('button', name='Edit cart'),
         }
 
     # move to search result page
@@ -62,7 +64,7 @@ class HomePage(BasePage):
     
     # move to login page
     def goto_login(self) -> LoginPage:
-        self.page.locator("#widget-navbar-217834 > ul > li:nth-child(6) > a").click()
+        self.page.get_by_role('button', name='My account').click()
         return LoginPage(self.page)
     
     # move to one of category pages

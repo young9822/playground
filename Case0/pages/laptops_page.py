@@ -12,9 +12,9 @@ class LaptopsPage(BasePage):
         self.page = page
 
         self._locs = {
-            'heading': "#entry_212392 > h1",
-            'macs': "#entry_212396 > div > a:nth-child(1) > figure",
-            'windows': "#entry_212396 > div > a:nth-child(2) > figure",
+            'heading': self.page.get_by_role('heading', name='Laptops'),
+            'macs': self.page.locator("#entry_212396 > div > a:nth-child(1) > figure"),
+            'windows': self.page.locator("#entry_212396 > div > a:nth-child(2) > figure"),
         }
 
         self.messages = {

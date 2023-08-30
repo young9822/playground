@@ -22,8 +22,8 @@ class TestShoppingCart(BaseTest):
     page = BaseTest
 
     @pytest.mark.regression
-    # @pytest.mark.e2e
-    def test_cart(self, page :Page) -> None:
+    @pytest.mark.e2e
+    def test_shopping_cart(self, page :Page) -> None:
         """
         Validate product cart feature. Add 2 products in cart and remove all
 
@@ -140,7 +140,7 @@ class TestShoppingCart(BaseTest):
         homePage.page = shoppingCartPage.page
 
         # validate the title
-        expect(homePage.page).to_have_title(homePage.expectedTitle)
+        expect(homePage.page).to_have_title(homePage.messages['title'])
         
 
 

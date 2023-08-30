@@ -11,7 +11,7 @@ class MacsPage(BasePage):
         self.page = page
 
         self._locs = {
-            'heading': "#entry_212392 > h1",
+            'heading': self.page.get_by_role('heading', name='Macs'),
         }
 
         self.messages = {

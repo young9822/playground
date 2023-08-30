@@ -11,15 +11,15 @@ class ShoppingCartPage(BasePage):
         self.page = page
 
         self._locs = {
-            'td product first': "#content > form > div > table > tbody > tr > td:nth-child(2) > a",
-            'td quantity first': "#content > form > div > table > tbody > tr:nth-child(1) > td:nth-child(4) > div > input",
-            'td delete first': "#content > form > div > table > tbody > tr:nth-child(1) > td:nth-child(4) > div > div > button.btn.btn-danger",
-            'td product second': "#content > form > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a",
-            'td quantity second': "#content > form > div > table > tbody > tr:nth-child(2) > td:nth-child(4) > div > input",
-            'td delete second': "#content > form > div > table > tbody > tr > td:nth-child(4) > div > div > button.btn.btn-danger",
-            'button continue shopping': "#content > div.buttons.d-flex > a.btn.btn-lg.btn-secondary.mr-auto",
-            'message empty': "#content > p",
-            'button continue': "#content > div > a",
+            'td product first': self.page.locator("#content > form > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > a"),
+            'td quantity first': self.page.locator("#content > form > div > table > tbody > tr > td:nth-child(4) > div > input"),
+            'td delete first': self.page.locator("#content > form > div > table > tbody > tr:nth-child(1) > td:nth-child(4) > div > div > button.btn.btn-danger"),
+            'td product second': self.page.locator("#content > form > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > a"),
+            'td quantity second': self.page.locator("#content > form > div > table > tbody > tr:nth-child(2) > td:nth-child(4) > div > input"),
+            'td delete second': self.page.locator("#content > form > div > table > tbody > tr > td:nth-child(4) > div > div > button.btn.btn-danger"),
+            'button continue shopping': self.page.get_by_role('link', name='Continue Shopping'),
+            'message empty': self.page.locator("#content > p"),
+            'button continue': self.page.get_by_role('link', name='Continue'),
         }
 
         self.messages = {

@@ -11,9 +11,9 @@ class NewsletterPage(BasePage):
         self.page = page
 
         self._locs = {
-            'radio yes': "#content > form > fieldset > div > div > div:nth-child(1) > label",
-            'selection yes': "#input-newsletter-yes",
-            'radio no': "#content > form > fieldset > div > div > div:nth-child(2) > label",
-            'selection no': "#input-newsletter-no",
-            'button continue': "#content > form > div > div.float-right > input",            
+            'radio yes': self.page.get_by_text('Yes', exact=True),
+            'selection yes': self.page.locator("#input-newsletter-yes"),
+            'radio no': self.page.get_by_text('No', exact=True),
+            'selection no': self.page.locator("#input-newsletter-no"),
+            'button continue': self.page.get_by_role('button', name='Continue'),
         }

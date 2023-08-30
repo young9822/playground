@@ -11,11 +11,11 @@ class ProductDetailsPage(BasePage):
         self.page = page
 
         self._locs = {
-            'first item name': "#entry_216816 > h1",
-            'first item brand': "#entry_216826 > ul > li:nth-child(1) > a",
-            'button addtocart': "#entry_216842 > button",
-            'popup message': "#notification-box-top > div > div.toast-body > div.d-flex.mb-3.align-items-start > p",
-            'button viewcart': "#notification-box-top > div > div.toast-body > div.form-row > div:nth-child(1) > a",
+            'first item name': self.page.locator("#entry_216816 > h1"),
+            'first item brand': self.page.locator("#entry_216826 > ul > li:nth-child(1) > a"),
+            'button addtocart': self.page.locator("#entry_216842").get_by_role('button', name='ADD TO CART'),
+            'popup message': self.page.locator("#notification-box-top > div > div.toast-body > div.d-flex.mb-3.align-items-start > p"),
+            'button viewcart': self.page.get_by_role('link', name='View Cart'),
         }
 
         self.message = {

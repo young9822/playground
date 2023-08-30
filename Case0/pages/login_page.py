@@ -15,11 +15,11 @@ class LoginPage(BasePage):
         self.page = page
 
         self._locs = {
-                'My account': "#widget-navbar-217834 > ul > li:nth-child(6) > a",
-                'E-Mail Address': "#input-email",
-                'Password': "#input-password",
-                'Login': "input.btn.btn-primary",
-                'Warning': "#account-login > div.alert.alert-danger.alert-dismissible",
+                'My account': self.page.locator("#widget-navbar-217834 > ul > li:nth-child(6) > a"),
+                'input email address': self.page.get_by_placeholder('E-Mail Address'),
+                'input password': self.page.get_by_placeholder('Password'),
+                'button login': self.page.get_by_role('button', name='Login'),
+                'Warning': self.page.locator("div.alert.alert-danger.alert-dismissible"),
         }
 
         self.messages = {
@@ -27,8 +27,8 @@ class LoginPage(BasePage):
         }
     
     def login(self, username :str, password :str) -> AccountPage:
-        self.get_el('E-Mail Address').clear()
-        self.get_el('E-Mail Address').fill(username)
-        self.get_el('Password').fill(password)
-        self.get_el('Login').click()
+        self.get_el('input email address').clear()
+        self.get_el('input email address').fill(username)
+        self.get_el('input password').fill(password)
+        self.get_el('button login').click()
         return AccountPage(self.page)

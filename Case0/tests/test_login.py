@@ -148,4 +148,4 @@ class TestLogin(BaseTest):
         accountPage.get_el('button continue').click()
 
         # validate the title directly
-        expect(homePage.page).to_have_title(homePage.expectedTitle)
+        expect(homePage.page).to_have_title(homePage.messages['title'])

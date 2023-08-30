@@ -6,11 +6,7 @@ class BasePage:
     def __init__(self, page :Page):
         """__init__"""
         self.page = page
-        self._loocs = {}
-
+        self._locs = {}
+    
     def get_el(self, elName :str) -> Locator:
-        return self.page.locator(self._locs[elName])
-
-    def check_title(self, title) -> str:
-        """check a title of this page"""
-        return self.page.title() == title
+        return self._locs[elName]

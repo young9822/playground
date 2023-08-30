@@ -13,16 +13,18 @@ class AccountPage(BasePage):
         self.page = page
 
         self._locs = {
-            'heading account': "#content > div:nth-child(1) > h2",
-            'heading orders': "#content > div:nth-child(2) > h2",
-            'menu logout': "#column-right > div > a:nth-child(14)",
-            'heading logout': "#content > h1",
-            'button continue': "#content > div > a",
-            'icon subscription': "#content > div:nth-child(1) > div > div > div:nth-child(5) > a",
-            'message success': "#account-account > div.alert.alert-success.alert-dismissible",
+            'heading account': self.page.get_by_role('heading', name='My Account'),
+            'heading orders': self.page.get_by_role('heading', name='My Orders'),
+            'menu logout': self.page.get_by_role('link', name='Logout'),
+            'heading logout': self.page.get_by_role('heading', name='Account Logout'),
+            'button continue': self.page.get_by_role('link', name='Continue'),
+            'icon subscription': self.page.get_by_role('link', name='Subscribe'),
+            'message success': self.page.locator("div.alert.alert-success.alert-dismissible"),
         }
 
-        self.successMsg = "Success"
+        self.message = {
+            'success': "Success",
+        }
 
     def goto_subscription(self):
         # click subscription icon to move to newsletter subscription page
