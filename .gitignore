@@ -4,6 +4,7 @@ Case*/result
 Case*/test-results
 Case*/__pycache__
 Case*/*/__pycache__
+Case*/pytest.ini
 test-results/*
 result/*
 .vscode
