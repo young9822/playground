@@ -1,5 +1,7 @@
 """collection of test data"""
 # pylint: disable=R0903
+from os import environ
+
 class HomeInfo:
     """for home page"""
     urlHome = "https://ecommerce-playground.lambdatest.io/"
@@ -14,5 +16,5 @@ class HomeInfo:
 class LoginInfo:
     """for login page"""
     urlLogin = "https://ecommerce-playground.lambdatest.io/index.php?route=account/login"
-    email = "siglab@naver.com"
-    password = "younglee"
+    email = environ['TEST_EMAIL']
+    password = environ['TEST_PASSWORD']
