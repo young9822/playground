@@ -2,12 +2,10 @@
 Welcome! Here is Young's playground for testing with automation. Please refer to the following for the detail. Enjoy automation!
 <br><br>
 
-## Case 0 & Case 1: Page Object Model
+## Case 1: Page Object Model
 A page object is an object-oriented class that serves as an interface to a page of your AUT. The tests then use the methods of this page object class whenever they need to interact with the UI of that page. The benefit is that if the UI changes for the page, the tests themselves don’t need to change, only the code within the page object needs to change. And this method is very effective even if your team lacks development capabilities.
 
-I prepared two versions. Case 0 used playwright and Case 1 used selenium.
-
-:octocat: POM, Playwright, Selenium, Github Action, Python, Pytest
+:octocat: POM, Playwright, Github Action, Python, Pytest
 <br><br>
 
 ## Case 2: Playwright vs. Selenium
