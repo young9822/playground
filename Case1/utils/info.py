@@ -1,11 +1,10 @@
 """
-info.py: definition of TestInfo class
+info.py: definition of Information class
 """
 from os import environ
-from playwright.sync_api import Page, expect
 
 class SiteInfo():
-    """LoginPage class which has locators and methods for 'Login' page"""
+    """SiteInfo class"""
     def __init__(self):
         """__init__"""
         self.homeURL = "https://ecommerce-playground.lambdatest.io"
