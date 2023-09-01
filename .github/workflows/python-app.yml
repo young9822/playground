@@ -34,4 +34,4 @@ jobs:
         TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
         TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
       run: |
-        pytest -m regression Case1
+        pytest Case1
