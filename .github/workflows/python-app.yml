@@ -34,4 +34,4 @@ jobs:
         TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
         TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
       run: |
-        pytest Case1
+        pytest --browser firefox -m regression Case1
