@@ -7,10 +7,10 @@ class BasePage:
         """__init__"""
         self.page = page
         self._locs = {}
-        self._msg = {}
+        self._msgs = {}
     
     def get_el(self, elName :str) -> Locator:
         return self._locs[elName]
     
     def get_msg(self, msg :str) -> str:
-        return self._msg[msg]
+        return self._msgs[msg]

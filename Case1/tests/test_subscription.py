@@ -71,7 +71,7 @@ class TestSubscription(BaseTest):
 
         # check success message
         expect(accountPage.get_el('message success')).to_be_visible()
-        expect(accountPage.get_el('message success')).to_contain_text(accountPage._msg['success'])
+        expect(accountPage.get_el('message success')).to_contain_text(accountPage.get_msg('success'))
 
         # click subscription icon to move to newsletter subscription page
         newsletterPage :NewsletterPage = accountPage.goto_subscription()

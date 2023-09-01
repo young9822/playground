@@ -22,7 +22,7 @@ class AccountPage(BasePage):
             'message success': self.page.locator("div.alert.alert-success.alert-dismissible"),
         }
 
-        self._msg = {
+        self._msgs = {
             'success': 'Success',
         }
 

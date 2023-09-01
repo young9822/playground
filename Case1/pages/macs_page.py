@@ -14,6 +14,6 @@ class MacsPage(BasePage):
             'heading': self.page.get_by_role('heading', name='Macs'),
         }
 
-        self._msg = {
+        self._msgs = {
             'heading': 'Macs'
         }

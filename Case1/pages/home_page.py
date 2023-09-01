@@ -14,7 +14,7 @@ class HomePage(BasePage):
         self.page = page
 
         # texts
-        self._msg = {
+        self._msgs = {
             'title': 'Your Store',
             'dummy': 'This is a dummy website for Web Automation Testing',
             'copyright': '© LambdaTest - Powered by OpenCart'

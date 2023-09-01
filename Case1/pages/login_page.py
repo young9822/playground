@@ -28,7 +28,7 @@ class LoginPage(BasePage):
                 'Warning': self.page.locator("div.alert.alert-danger.alert-dismissible"),
         }
 
-        self._msg = {
+        self._msgs = {
             'warning': 'Warning: No match for E-Mail Address and/or Password.'
         }
     

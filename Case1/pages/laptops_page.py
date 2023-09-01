@@ -17,7 +17,7 @@ class LaptopsPage(BasePage):
             'windows': self.page.locator("#entry_212396 > div > a:nth-child(2) > figure"),
         }
 
-        self._msg = {
+        self._msgs = {
             'heading': 'Laptops'
         }
 
