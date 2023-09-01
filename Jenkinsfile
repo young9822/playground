@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage(‘Test’) {
             steps {
-                docker.image("pytest-playwright").run('--env TEST_EMAIL=valid@example.io --env TEST_PASSWORD=valid --volume Case1:Case1:rw')
+                """docker.image("pytest-playwright").run('--env TEST_EMAIL=valid@example.io --env TEST_PASSWORD=valid --volume Case1:Case1:rw')
                 sh 'pytest --html=/Case1/result/result.html --self-contained-html -m regression Case1’
+                """
             }
         }
     }
