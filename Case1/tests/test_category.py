@@ -46,7 +46,7 @@ class TestCategory(BaseTest):
 
         # check the heading
         expect(laptopsPage.get_el('heading')).to_be_visible()
-        expect(laptopsPage.get_el('heading')).to_have_text(laptopsPage.messages['heading'])
+        expect(laptopsPage.get_el('heading')).to_have_text(laptopsPage.get_msg('heading'))
 
         """
         As a user, 
@@ -66,4 +66,4 @@ class TestCategory(BaseTest):
 
         # check the heading
         expect(macsPage.get_el('heading')).to_be_visible()
-        expect(macsPage.get_el('heading')).to_have_text(macsPage.messages['heading'])
+        expect(macsPage.get_el('heading')).to_have_text(macsPage.get_msg('heading'))

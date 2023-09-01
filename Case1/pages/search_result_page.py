@@ -11,12 +11,6 @@ class SearchResultPage(BasePage):
         """__init__"""
         self.page = page
 
-        # self._locs = {
-        #     'heading search': "#entry_212456 > h1",
-        #     'textbox search': "#input-search",
-        #     'first item': "#entry_212469 > div > div:nth-child(1) > div > div.caption > h4 > a",
-        # }
-
         self._locs = {
             'heading search': self.page.get_by_role('heading', name='Search'),
             'textbox search': self.page.get_by_role('textbox', name='Search Criteria'),

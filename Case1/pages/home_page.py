@@ -14,7 +14,7 @@ class HomePage(BasePage):
         self.page = page
 
         # texts
-        self.messages = {
+        self._msg = {
             'title': 'Your Store',
             'dummy': 'This is a dummy website for Web Automation Testing',
             'copyright': '© LambdaTest - Powered by OpenCart'
@@ -54,17 +54,22 @@ class HomePage(BasePage):
             'category laptops': self.page.get_by_role('link', name='Laptops & Notebooks'),
             'button shopping cart': self.page.locator("#entry_217825"),
             'button edit cart': self.page.get_by_role('button', name='Edit cart'),
+            'button search': self.page.get_by_role('button', name='search'),
+            'button myaccount': self.page.get_by_role('button', name='My account'),
+            'textbox search': self.page.get_by_role('textbox', name='search'),
+            'text dummy': self.page.get_by_role('strong').nth(2),
+            'text copyright': self.page.get_by_text('OpenCart'),
         }
 
     # move to search result page
     def search(self, product :str) -> SearchResultPage:
-        self.page.get_by_role('textbox', name='search').fill(product)
-        self.page.get_by_role('button', name='search').click()
+        self.get_el('textbox search').fill(product)
+        self.get_el('button search').click()
         return SearchResultPage(self.page)
     
     # move to login page
     def goto_login(self) -> LoginPage:
-        self.page.get_by_role('button', name='My account').click()
+        self.get_el('button myaccount').click()
         return LoginPage(self.page)
     
     # move to one of category pages
@@ -83,9 +88,6 @@ class HomePage(BasePage):
     
     def get_el_menu_button(self, menuButton :str):
         return self.page.get_by_role('button', name=menuButton)
-    
-    def get_el_dummy(self):
-        return self.page.get_by_role('strong').nth(2)
 
     def get_el_heading(self, heading :str):
         return self.page.get_by_role('heading', name=heading)

@@ -44,13 +44,12 @@ class TestLogin(BaseTest):
         # move to login page
         loginPage :LoginPage = homePage.goto_login()
 
-        # fill your email, password and click login button
-        username = siteInfo.userInfo['invalidUsername']['username']
-        password = siteInfo.userInfo['invalidUsername']['password']
-        accountPage :AccountPage = loginPage.login(username, password)        
+        # fill your email, password and click login button 
+        accountPage :AccountPage = loginPage.login('invalidUsername')
 
         # if the warning message is correct
-        expect(loginPage.get_el('Warning')).to_contain_text(loginPage.messages['warning'])
+        expect(loginPage.get_el('Warning')).to_be_visible()
+        expect(loginPage.get_el('Warning')).to_contain_text(loginPage.get_msg('warning'))
 
     @pytest.mark.regression
     # @pytest.mark.e2e
@@ -79,12 +78,11 @@ class TestLogin(BaseTest):
         loginPage :LoginPage = homePage.goto_login()
 
         # fill your email, password and click login button
-        username = siteInfo.userInfo['invalidPassword']['username']
-        password = siteInfo.userInfo['invalidPassword']['password']
-        accountPage :AccountPage = loginPage.login(username, password)     
+        accountPage :AccountPage = loginPage.login('invalidPassword')
 
         # if the heading of the account page has 'My Account'
-        expect(loginPage.get_el('Warning')).to_contain_text(loginPage.messages['warning'])
+        expect(loginPage.get_el('Warning')).to_be_visible()
+        expect(loginPage.get_el('Warning')).to_contain_text(loginPage.get_msg('warning'))
 
     @pytest.mark.regression
     # @pytest.mark.e2e
@@ -112,15 +110,15 @@ class TestLogin(BaseTest):
         # move to login page
         loginPage :LoginPage = homePage.goto_login()
 
-        # fill your email, password and click login button
-        username = siteInfo.userInfo['valid']['username']
-        password = siteInfo.userInfo['valid']['password']
-        accountPage :AccountPage = loginPage.login(username, password)     
+        # fill your email, password and click login button        
+        accountPage :AccountPage = loginPage.login('valid')     
 
         # if the heading of the account page has 'My Account'
+        expect(accountPage.get_el('heading account')).to_be_visible()
         expect(accountPage.get_el('heading account')).to_have_text('My Account')
 
         # if the heading of the account page has 'My Order'
+        expect(accountPage.get_el('heading orders')).to_be_visible()
         expect(accountPage.get_el('heading orders')).to_have_text('My Orders')
 
         """
@@ -148,4 +146,4 @@ class TestLogin(BaseTest):
         accountPage.get_el('button continue').click()
 
         # validate the title directly
-        expect(homePage.page).to_have_title(homePage.messages['title'])
+        expect(homePage.page).to_have_title(homePage.get_msg('title'))

@@ -64,7 +64,7 @@ class TestShoppingCart(BaseTest):
 
         # check the message of notification window
         expect(productDetailPage.get_el('popup message')).to_be_visible()
-        expect(productDetailPage.get_el('popup message')).to_contain_text(productDetailPage.message['popup'])
+        expect(productDetailPage.get_el('popup message')).to_contain_text(productDetailPage.get_msg('popup'))
 
         # click view cart button to move shopping cart page
         productDetailPage.get_el('button viewcart').click()
@@ -97,7 +97,7 @@ class TestShoppingCart(BaseTest):
 
         # check the message of notification window
         expect(productDetailPage.get_el('popup message')).to_be_visible()
-        expect(productDetailPage.get_el('popup message')).to_contain_text(productDetailPage.message['popup'])
+        expect(productDetailPage.get_el('popup message')).to_contain_text(productDetailPage.get_msg('popup'))
 
         # click view cart button to move shopping cart page
         productDetailPage.get_el('button viewcart').click()
@@ -132,15 +132,14 @@ class TestShoppingCart(BaseTest):
 
         # check if shopping cart is empty
         expect(shoppingCartPage.get_el('message empty')).to_be_visible()
-        
-        expect(shoppingCartPage.get_el('message empty')).to_contain_text(shoppingCartPage.messages['empty'])
+        expect(shoppingCartPage.get_el('message empty')).to_contain_text(shoppingCartPage.get_msg('empty'))
 
         # return to home page
         shoppingCartPage.get_el('button continue').click()
         homePage.page = shoppingCartPage.page
 
         # validate the title
-        expect(homePage.page).to_have_title(homePage.messages['title'])
+        expect(homePage.page).to_have_title(homePage.get_msg('title'))
         
 
 

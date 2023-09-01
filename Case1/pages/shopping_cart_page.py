@@ -22,6 +22,6 @@ class ShoppingCartPage(BasePage):
             'button continue': self.page.get_by_role('link', name='Continue'),
         }
 
-        self.messages = {
+        self._msg = {
             'empty': 'Your shopping cart is empty!'
         }

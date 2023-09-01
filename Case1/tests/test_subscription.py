@@ -46,11 +46,10 @@ class TestSubscription(BaseTest):
         loginPage :LoginPage = homePage.goto_login()
 
         # fill your email, password and click login button
-        username = siteInfo.userInfo['valid']['username']
-        password = siteInfo.userInfo['valid']['password']
-        accountPage :AccountPage = loginPage.login(username, password)     
+        accountPage :AccountPage = loginPage.login('valid')
 
         # if the heading of the account page has 'My Account'
+        expect(accountPage.get_el('heading account')).to_be_visible()
         expect(accountPage.get_el('heading account')).to_have_text('My Account')
 
         # click subscription icon to move to newsletter subscription page
@@ -59,7 +58,7 @@ class TestSubscription(BaseTest):
         # get current selection of newsletter subscription
         curSelYes = newsletterPage.get_el('selection yes').get_attribute('checked')
         
-        # if it's 'Yes', click 'No' radio button
+        # toggle the radio button
         if curSelYes == 'checked':
             newsletterPage.get_el('radio no').click()
             mySelection = 'No'
@@ -71,7 +70,8 @@ class TestSubscription(BaseTest):
         newsletterPage.get_el('button continue').click()
 
         # check success message
-        expect(accountPage.get_el('message success')).to_contain_text(accountPage.message['success'])
+        expect(accountPage.get_el('message success')).to_be_visible()
+        expect(accountPage.get_el('message success')).to_contain_text(accountPage._msg['success'])
 
         # click subscription icon to move to newsletter subscription page
         newsletterPage :NewsletterPage = accountPage.goto_subscription()

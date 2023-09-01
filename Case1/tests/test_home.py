@@ -43,7 +43,7 @@ class TestHome(BaseTest):
         homePage.page.goto(siteInfo.homeURL)
 
         # validate the title
-        expect(homePage.page).to_have_title(homePage.messages['title'])
+        expect(homePage.page).to_have_title(homePage.get_msg('title'))
 
         # validate the menu bar
         for menu in homePage.menus:
@@ -53,14 +53,16 @@ class TestHome(BaseTest):
             expect(homePage.get_el_menu_button(menuButton)).to_have_attribute(*homePage.attrs['menuButton'])
 
         # validate dummy message
-        expect(homePage.get_el_dummy()).to_have_text(homePage.messages['dummy'])
+        expect(homePage.get_el('text dummy')).to_be_visible()
+        expect(homePage.get_el('text dummy')).to_have_text(homePage.get_msg('dummy'))
 
         # validate the headings
         for heading in homePage.headings:
             expect(homePage.get_el_heading(heading)).to_have_attribute(*homePage.attrs['heading'])
 
         # validate the copyright text
-        expect(homePage.page.get_by_text('OpenCart')).to_have_text(homePage.messages['copyright'])
+        expect(homePage.get_el('text copyright')).to_be_visible()
+        expect(homePage.get_el('text copyright')).to_have_text(homePage.get_msg('copyright'))
 
 
     

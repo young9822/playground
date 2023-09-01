@@ -18,7 +18,7 @@ class ProductDetailsPage(BasePage):
             'button viewcart': self.page.get_by_role('link', name='View Cart'),
         }
 
-        self.message = {
+        self._msg = {
             'popup': 'Success:',
         }
 

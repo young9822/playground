@@ -32,7 +32,7 @@ class TestSearch(BaseTest):
         homePage.page.goto(siteInfo.homeURL)
 
         # validate the title
-        expect(homePage.page).to_have_title(homePage.messages['title'])
+        expect(homePage.page).to_have_title(homePage.get_msg('title'))
 
         """
         As a user, 
