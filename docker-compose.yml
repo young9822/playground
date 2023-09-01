@@ -6,8 +6,10 @@ volumes:
 services:
   pytest-playwright:
     image: pytest-playwright
+    environment:
+      - TEST_EMAIL=valid@example.io
+      - TEST_PASSWORD=valid
     volumes:
-      - ./result:/result:rw
-      - ./Case2:/Case2:rw
-    command: pytest -m playwright_only --browser webkit --browser firefox --browser chromium Case2
+      - ./Case1:/Case1:rw
+    command: pytest --html=/Case1/result/result.html --self-contained-html -m regression Case1
   
