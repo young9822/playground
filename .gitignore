@@ -12,4 +12,6 @@ result/*
 .DS_Store
 *.html
 *.png
+*.yml
 
+Jenkinsfile
