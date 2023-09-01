@@ -16,7 +16,7 @@ class LoginPage(BasePage):
         # get email and password from os variables
         self._userInfo = {
             'valid': (environ['TEST_EMAIL'], environ['TEST_PASSWORD']),
-            'invalidUsername': ('invalid@example.io', environ['TEST_PASSWORD']),
+            'invalidUsername': ('invalid00@example.io', environ['TEST_PASSWORD']),
             'invalidPassword': (environ['TEST_EMAIL'], '1234qewradsf'),
         }
 
