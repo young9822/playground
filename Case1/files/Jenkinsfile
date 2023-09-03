@@ -9,17 +9,12 @@ pipeline {
                     image 'pytest-playwright:latest'
                     args """
                         --name my-playwright-test
-                        --restart=on-failure
-                        --detach
                         --network jenkins
-                        -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:lts
                         --env DOCKER_HOST=tcp://docker:2376
                         --env DOCKER_CERT_PATH=/certs/client
                         --env DOCKER_TLS_VERIFY=1
                         --env TEST_EMAIL='valid@example.io'
                         --env TEST_PASSWORD='valid'
-                        --publish 8080:8080
-                        --publish 50000:50000
                         --volume Case1:Case1:rw'
                     """
                 }
