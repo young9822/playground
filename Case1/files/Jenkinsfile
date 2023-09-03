@@ -15,6 +15,8 @@ pipeline {
                         --env DOCKER_TLS_VERIFY=1
                         --env TEST_EMAIL='valid@example.io'
                         --env TEST_PASSWORD='valid'
+                        --volume /Users/youngh9822/learn/docker/jenkins-docker-certs:/certs/client
+                        --volume /Users/youngh9822/learn/docker/jenkins-data:/var/jenkins_home
                         --volume Case1:Case1:rw'
                     """
                 }
