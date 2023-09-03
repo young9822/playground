@@ -11,6 +11,7 @@ pipeline {
                         --restart=on-failure
                         --detach
                         --network jenkins
+                        -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:lts
                         --env DOCKER_HOST=tcp://docker:2376
                         --env DOCKER_CERT_PATH=/certs/client
                         --env DOCKER_TLS_VERIFY=1
