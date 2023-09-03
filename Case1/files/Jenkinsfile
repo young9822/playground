@@ -5,6 +5,7 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
+                    reuseNode true
                     image 'pytest-playwright:latest'
                     args """
                         --name my-playwright-test
