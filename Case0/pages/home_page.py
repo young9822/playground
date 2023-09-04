@@ -33,7 +33,7 @@ class HomePage(BasePage):
         }
     
     # move to one of category pages
-    def goto_category(self, category) -> LaptopsPage:
+    def goto_category(self, category :str) -> LaptopsPage:
         self.get_el_clickable('menu category').click()
         time.sleep(3)
         self.get_el_clickable(category).click()
