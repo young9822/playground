@@ -5,7 +5,7 @@ from appium import webdriver
 from appium.options.ios import XCUITestOptions
 from utilities.TestInfo import SetUPiOS
 
-def get_desired_capabilities(appName):
+def get_desired_capabilities(appName :str) -> XCUITestOptions:
     options = XCUITestOptions()
     options.device_name = 'iPhone 14'
     options.platform_name = 'iOS'
@@ -14,7 +14,12 @@ def get_desired_capabilities(appName):
     options.locale = 'US'
     
     if appName is not None:
-        options.app = os.path.abspath(SetUPiOS.app_path.get(appName))
+        if appName in SetUPiOS.myApps.keys():
+            options.app = os.path.abspath(SetUPiOS.myApps.get(appName))
+        elif appName in SetUPiOS.nativeApps.keys():   # iOS Navive apps
+            options.app = SetUPiOS.nativeApps.get(appName)
+        else:
+            assert appName is None, "Wrong App name!"
     else:
         assert appName is not None, "App name missed!"
 
